@@ -46,18 +46,30 @@ public class JobRepo implements JobService {
 
     // method to return all JobPosts
     public List<JobPost> getAllJobs() {
+
         return jobs;
     }
 
 
-
     // method to save a job post object into arrayList
-    public void addJobPost(JobPost job) {
+    public List<JobPost> addJobPost(JobPost job) {
         jobs.add(job);
-
+        return null;
     }
 
+    @Override
+    public void updateJobPost(JobPost jobPost) {
+        for (JobPost job : jobs) {
+            if (job.getPostId() == jobPost.getPostId()) {
+                job.setPostProfile(jobPost.getPostProfile());
+                job.setPostDesc(jobPost.getPostDesc());
+                job.setReqExperience(jobPost.getReqExperience());
+                job.setPostTechStack(jobPost.getPostTechStack());
+                System.out.println("Job Post with ID " + jobPost.getPostId() + " has been updated.");
+            }
+        }
 
+    }
 
 
     //method to get a job by postId
@@ -67,8 +79,12 @@ public class JobRepo implements JobService {
                 return job;
             }
         }
-
         return null;
+    }
+
+    @Override
+    public void deleteJob(int postId) {
+        jobs.removeIf(job -> job.getPostId() == postId);
     }
 
 }

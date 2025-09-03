@@ -1,8 +1,6 @@
 package com.example.SpringRESTdemo2.service;
 
 import com.example.SpringRESTdemo2.model.JobPost;
-import com.example.SpringRESTdemo2.repo.JobRepo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,11 +15,15 @@ public interface JobService {
 
 
     // method to add a jobPost
-    public void addJobPost(JobPost jobPost) ;
+    public List<JobPost> addJobPost(JobPost jobPost) ;
 
 
+
+    // method to add a jobPost
+    public void updateJobPost(JobPost jobPost) ;
 
 
 
     public JobPost getJob(int postId) ;
+    public void deleteJob(int postId) ;
 }

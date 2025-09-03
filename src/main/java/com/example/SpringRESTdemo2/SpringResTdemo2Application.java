@@ -8,7 +8,6 @@ public class SpringResTdemo2Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringResTdemo2Application.class, args);
-
         System.out.println("Om Murugaa ...");
 	}
 
