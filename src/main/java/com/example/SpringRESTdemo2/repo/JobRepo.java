@@ -45,6 +45,7 @@ public class JobRepo implements JobService {
 
 
     // method to return all JobPosts
+    @Override
     public List<JobPost> getAllJobs() {
 
         return jobs;
@@ -52,6 +53,7 @@ public class JobRepo implements JobService {
 
 
     // method to save a job post object into arrayList
+    @Override
     public List<JobPost> addJobPost(JobPost job) {
         jobs.add(job);
         return null;
